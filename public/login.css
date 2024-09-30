@@ -1,0 +1,168 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* General Body Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f4f8; /* Light grey-blue background */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
+
+/* Container for the form */
+.container {
+  background-color: #ffffff; /* White background */
+  width: 350px; /* Container width */
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  text-align: center;
+  margin: 0 auto;
+  /* position: relative; */
+}
+
+/* Header styles */
+h1 {
+  color: #2d3748; /* Darker grey */
+  font-size: 2em;
+  padding-left: 40px;
+  padding-right:-80px;
+  /* margin-bottom: 30px;
+  margin-top: 0; */
+}
+
+/* Form styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Spacing between form elements */
+}
+
+/* Input field styles */
+.inp {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #dcdfe3; /* Light grey border */
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box; /* Ensure the padding and border are included in the element's width */
+}
+
+.inp:focus {
+  border-color: #4caf50; /* Green border on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Button styles */
+.btn {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #4caf50; /* Green background */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #388e3c; /* Darker green on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow on hover */
+}
+
+/* Floating button for switching between login and register */
+#log {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+#log:hover {
+  background-color: #388e3c; /* Darker green on hover */
+}
+
+#log a {
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+}
+
+/* Footer styles */
+#footer {
+  color: #aaa;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 20px;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+
+/* Profile picture and username */
+.profile-link {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.profile-img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover; /* Ensure image is not distorted */
+  border: 2px solid #4caf50; /* Border around profile picture */
+  transition: box-shadow 0.3s ease;
+}
+
+.profile-img:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow on hover */
+}
+
+.username {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  color: #2d3748; /* Darker grey */
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Error message styles */
+.error {
+  color: #e74c3c; /* Red color for errors */
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  #log {
+    width: 40px;
+    height: 40px;
+    font-size: 10px;
+  }
+}

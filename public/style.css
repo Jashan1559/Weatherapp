@@ -1,0 +1,148 @@
+/* General styles */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #e8f5e9; /* Light green background */
+  margin: 0;
+  padding: 20px;
+  padding-top: 100px;
+  overflow-x: hidden;
+}
+
+/* Container for the app */
+.container {
+  max-width: 600px;
+  background-color: #4caf50; /* Darker green for the container */
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Header styles */
+h1 {
+  color: black;
+  text-align: center;
+  margin-top: 0; /* Remove default margin */
+}
+
+/* Profile picture and username */
+a img {
+  height: 40px;
+  position: fixed;
+  top: 20px;
+  right: 20px; /* Position adjustments */
+}
+
+.username {
+  position: fixed;
+  top: 70px;
+  right: 20px; /* Aligns username with profile picture */
+  color: black;
+  font-size: 16px; /* Adjust font size */
+  font-weight: 700; /* Bold text */
+}
+
+/* Form styles */
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0; /* Add margin for spacing */
+}
+
+/* Input field styles */
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #66bb6a; /* Green border */
+  border-radius: 5px;
+  margin-right: 10px; /* Space between input and button */
+  transition: border-color 0.3s ease; /* Smooth border transition */
+}
+
+input[type="text"]:focus {
+  border-color: #388e3c; /* Darker green on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Button styles */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #388e3c; /* Slightly darker green for button */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+button:hover {
+  background-color: #66bb6a; /* Lighter green on hover */
+}
+
+/* Card styles */
+.card {
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slightly deeper shadow */
+  margin-top: 20px; /* Space above the card */
+}
+
+/* Weather status styles */
+.weather-status {
+  font-size: 1.5em; /* Increase font size for weather status */
+  margin: 10px 0;
+  color: #388e3c; /* Dark green color for visibility */
+}
+
+.weather-description {
+  margin-left: 5px; /* Space between icon and text */
+}
+
+/* Location styles */
+.location {
+  font-size: 1.2em; /* Slightly smaller font size for location */
+  color: #555; /* Dark grey color for location */
+  margin-top: 5px;
+}
+
+/* Error message styles */
+.error {
+  color: red;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Icon styles */
+.icon {
+  color: #388e3c; /* Icon color */
+  margin-right: 5px; /* Space between icon and text */
+  vertical-align: middle; /* Aligns icon with text */
+}
+/* Profile Picture Styles */
+.profile-link {
+  position: fixed;
+  top: 20px; /* Adjust position as needed */
+  right: 20px; /* Position on the right side */
+}
+
+.profile-img {
+  height: 40px; /* Set height */
+  border-radius: 50%; /* Make the image circular */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+}
+
+/* Username Styles */
+.username {
+  position: fixed;
+  top: 70px; /* Aligns with the profile picture */
+  right: 20px; /* Aligns with the profile picture */
+  color: black;
+  font-size: 16px; /* Adjust font size */
+  font-weight: 700; /* Bold text */
+}
