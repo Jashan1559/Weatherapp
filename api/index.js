@@ -27,15 +27,15 @@ if (fs.existsSync('Users.json')) {
 
 app.get("/home", (req, res) => {
   const username = req.session.username;
-  console.log("Meow "+username);
   res.render("index", { weather: null, error: null ,username: username });
 });
 
-/////////////////////////////////////////////////////////////////////////
+
 
 app.get("/", (req, res) => {
   res.render("register", { weather: null, error: null });
 });
+
 app.post("/", (req, res, next) => {
   let { username, email, password } = req.body;
   if (!username || !email || !password) { return res.status(400).send("All fields are required.");}
