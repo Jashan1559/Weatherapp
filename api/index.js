@@ -17,7 +17,7 @@ app.use(session({
     secret: 'your-secret-key',
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false } ,
+    cookie: { secure: false} ,
     maxAge: Date.now() + (30 * 24 * 3600 * 1000)
 }));
 if (fs.existsSync('Users.json')) {
