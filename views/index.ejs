@@ -11,12 +11,15 @@
   <body>
     <div class="container">
       <h1>Weather App using NodeJS</h1>
-      <!-- Pfp -->
-      <a href="/login" class="profile-link">
-        <img src="/public/th.jpeg" class="profile-img" />
-      </a>
-      <div class="username"><%= username %></div>
-      <!-- pfp -->
+
+
+
+
+      <a href="/login"><img src="/public/th.jpeg" class="profile-img"></a>
+      <div class = "username"><%=username %></div>
+
+
+
       <form action="/weather" method="get">
         <input type="text" name="city" placeholder="Enter city name" />
         <button type="submit">Get Weather</button>
