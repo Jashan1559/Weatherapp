@@ -3,7 +3,7 @@ const path = require("path");
 const axios = require("axios");
 const app = express();
 const fs = require("fs");
-const Users = require("../Users.json");
+const Users = require(path.resolve(__dirname, '../Users.json'));
 let db = [];
 
 
@@ -13,14 +13,17 @@ app.set('views', path.join(__dirname, '../views'));
 app.use('/public', express.static(path.join(__dirname, '../public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 const session = require('express-session');
 app.use(session({
     secret: 'your-secret-key',
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false} ,
-    maxAge: Date.now() + (30 * 24 * 3600 * 1000)
+    cookie: { maxAge: 30 * 24 * 3600 * 1000 },
+    cookie: { secure: process.env.NODE_ENV === 'production' }
 }));
+
 if (fs.existsSync('Users.json')) {
   const data = fs.readFileSync('Users.json');
   db = JSON.parse(data);
