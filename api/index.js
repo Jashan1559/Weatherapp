@@ -32,38 +32,38 @@ app.get("/home", (req, res) => {
 });
 
 
-app.get("/", (req, res) => {
-  res.render("register", { weather: null, error: null });
-});
+// app.get("/", (req, res) => {
+//   res.render("register", { weather: null, error: null });
+// });
 
 
-app.post("/", (req, res, next) => {
-  let { username, email, password } = req.body;
-  if (!username || !email || !password) { return res.status(400).send("All fields are required.");}
+// app.post("/", (req, res, next) => {
+//   let { username, email, password } = req.body;
+//   if (!username || !email || !password) { return res.status(400).send("All fields are required.");}
 
-  const existingUser = db.find(user => user.email === email);
-  if (existingUser) {return res.status(400).send("User already exists with this email.");}
+//   const existingUser = db.find(user => user.email === email);
+//   if (existingUser) {return res.status(400).send("User already exists with this email.");}
 
-  let user = {
-      id: new Date().getTime().toString().slice(5),
-      username: username,
-      email: email,
-      password: password
-  };
-  db.push(user);
-  fs.writeFile("Users.json", JSON.stringify(db), (err) => {
-      if (err) {return next(err); } 
-      else {res.redirect("login");}
-  });
-});
+//   let user = {
+//       id: new Date().getTime().toString().slice(5),
+//       username: username,
+//       email: email,
+//       password: password
+//   };
+//   db.push(user);
+//   fs.writeFile("Users.json", JSON.stringify(db), (err) => {
+//       if (err) {return next(err); } 
+//       else {res.redirect("login");}
+//   });
+// });
 
 //Login 
-app.get("/login", (req, res) => {
+app.get("/", (req, res) => {
   res.render("login", { weather: null, error: null });
 });
 
 
-app.post("/login", (req, res) => {
+app.post("/", (req, res) => {
   let { username, password } = req.body;
   let database = Users;
   if (!username || !password) {
