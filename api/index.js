@@ -3,6 +3,7 @@ const path = require("path");
 const axios = require("axios");
 const app = express();
 const fs = require("fs");
+const Users = require("../Users.json");
 let db = [];
 
 
@@ -31,10 +32,10 @@ app.get("/home", (req, res) => {
 });
 
 
-
 app.get("/", (req, res) => {
   res.render("register", { weather: null, error: null });
 });
+
 
 app.post("/", (req, res, next) => {
   let { username, email, password } = req.body;
@@ -60,21 +61,35 @@ app.post("/", (req, res, next) => {
 app.get("/login", (req, res) => {
   res.render("login", { weather: null, error: null });
 });
+
+
 app.post("/login", (req, res) => {
   let { username, password } = req.body;
-  
+  let database = Users;
   if (!username || !password) {
       return res.status(400).send("All fields are required.");
   }
-  
-  const foundUser = db.find(user => user.username === username && user.password === password);
-
-  if (foundUser) {
-    req.session.username = foundUser.username;
-    res.redirect("/home");
-  } else {
-      res.status(401).send("Invalid credentials. Please try again.");
+  let index = database.findIndex((elm) => elm.username.toLowerCase() == username.toLowerCase());
+  if(index >= 0){
+    if(database[index].password == password){
+      req.session.username = database[index].username;
+      res.redirect("/home");
+    }
+    else{
+      res.send("Wrong Password");
+    }
   }
+  else{
+    res.send("User Not Found");
+  }
+  // const foundUser = db.find(user => user.username === username && user.password === password);
+
+  // if (foundUser) {
+  //   req.session.username = foundUser.username;
+  //   res.redirect("/home");
+  // } else {
+  //     res.status(401).send("Invalid credentials. Please try again.");
+  // }
 });
 
 
